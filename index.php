@@ -26,9 +26,7 @@ register_deactivation_hook(__FILE__,'deactivate_plugin_crm');
 
 function printShortcode($atts) {
     $class = new Shortcode();
-    global $wpdb;
-
-    return $class -> make_content();
+    return $class -> make_keywords($atts["list"]);
 }
 
-add_shortcode("keyword", "printShortcode");
+add_shortcode("keywords", "printShortcode");
